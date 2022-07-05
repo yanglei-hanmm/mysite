@@ -23,8 +23,12 @@ def login(request):
     else:
         username = request.POST.get('username')
         password = request.POST.get('password')
+        times = request.POST.get('times')
+        print('提交时间为: '+times)
         if username == 'pk' and password =='123':
             return render(request,'news/index.html')
+
+
 
 #news/set_cookie
 def set_cookie(request):
