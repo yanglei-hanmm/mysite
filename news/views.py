@@ -12,7 +12,7 @@ def year_archive(request, year):
 def index(request):
     # 获取浏览器的ip地址
     user_ip = request.META['REMOTE_ADDR']
-    print(user_ip)
+    print('user_ip is : '+user_ip)
     return render(request, 'news/index.html')
 
 def login(request):
