@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>DCIM-首页</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<div class="search_bar clearfix">
+    <a href="" class="corp_logo fl">
+        <img src="{% static 'images/logo_small.png' %}">
+    </a>
+    <div class="search_con fl">
+        <input type="text" class="input_text fl" name="" placeholder="搜索设备">
+        <input type="submit" class="input_btn fr" name="" value="搜索">
+    </div>
+    <div class="user_con fr">
+        {% if user.is_authenticated %}
+        {{ user.username }}
+        <a href="{% url 'user:logout' %}">注销</a>
+        <span>|</span>
+        <a href="#">后台管理</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="navbar_con">
+    <div class="navbar">
+    <div class="fl">
+        <h1 class="fl">全友家私DC机房</h1>
+    </div>
+    </div>
+</div>
+<div class="center_con clearfix">
+    <ul class="subnav fl">
+        {% for dcinfo in dcinfos %}
+        <li>
+            <a href="#">{{ dcinfo.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+<div class="footer">
+		<div class="foot_link">
+			<a href="#">关于我们</a>
+			<span>|</span>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">招聘人才</a>
+			<span>|</span>
+			<a href="#">友情链接</a>
+		</div>
+		<p>CopyRight © 2022 全友家私有限公司 All Rights Reserved</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>DCIM-登录</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<div class="login_top clearfix">
+    <a href="" class="corp_logo">
+        <img src="{% static 'images/logo.png' %}">
+    </a>
+
+</div>
+<div class="login_form_bg">
+    <div class="login_form_wrap clearfix">
+
+        <div class="login_banner fl"></div>
+        <div class="slogan fl">
+            绿色全友 · 温馨世界
+        </div>
+        <div class="login_form fr">
+            <div class="login_title clearfix">
+                <h1>DCIM-用户登录</h1>
+            </div>
+            <div class="form_input">
+                <form action="" method="post">
+                    {% csrf_token %}
+                <div>
+                    <input type="text" class="name_input" name="username" placeholder="请输入用户名" />
+                </div>
+
+                <div>
+                    <input type="password" class="pass_input" name="password" placeholder="请输入密码" />
+                </div>
+                    <div class="more_input clearfix">
+                        <input type="checkbox" name="remember">
+                        <label>记住用户名</label>
+                        <a href="#">忘记密码</a>
+                    </div>
+
+                <div>
+                    <input type="submit" name="" value="登录" class="input_submit">
+                </div>
+            </form>
+
+            </div>
+            <div class="errmsg">
+                {{ errmsg }}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+		<div class="foot_link">
+			<a href="#">关于我们</a>
+			<span>|</span>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">招聘人才</a>
+			<span>|</span>
+			<a href="#">友情链接</a>
+		</div>
+		<p>CopyRight © 2022 全友家私有限公司 All Rights Reserved</p>
+</div>
+</body>
+</html>
