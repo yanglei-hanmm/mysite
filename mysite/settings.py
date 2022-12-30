@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-__-oy0#odji83ghe&9)e7q6%fv4s-hhbo_$tg(65s_$sm8i8$y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -81,10 +81,18 @@ DATABASES = {
         'NAME': 'mysite',
         'USER': 'dailyfresh',
         'PASSWORD': 'Quanyou9527#',
-        'HOST': '172.30.2.250',
+        'HOST': '127.0.0.1',
         'PORT': 3306,
     }
 }
+
+# 设置Django的存储类
+DEFAULT_FILE_STORAGE='utils.fdfs.storage.FDFSStorage'
+
+# 设置fdfs使用的client.conf文件路径
+FDFS_CLIENT_CONF = './utils/fdfs/client.conf'
+# 设置fdfs存储服务器ip及端口
+FDFS_URL = 'http://172.30.2.250:8888/'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -123,8 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]
+# os.path.join(BASE_DIR,'dcim','static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

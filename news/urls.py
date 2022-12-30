@@ -10,4 +10,5 @@ urlpatterns = [
     path('get_cookie/',views.get_cookie),
     path('index/',views.index),
     path('login/',views.login),
+    path('table_image/',views.table_image),
 ]

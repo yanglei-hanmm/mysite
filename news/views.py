@@ -41,3 +41,6 @@ def get_cookie(request):
     '''测试获取cookie'''
     num = request.COOKIES['num']
     return HttpResponse(num)
+
+def table_image(request):
+    return render(request, 'news/table_with_image.html')

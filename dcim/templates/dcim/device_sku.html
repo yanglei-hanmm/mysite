@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dcim/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dcim/css/reset.css' %}">
+</head>
+<body>
+    <div class="total_count">全部商品<em>{{ total_count }}</em>件</div>
+	<ul class="device_list_th clearfix">
+		<li class="col01">槽位</li>
+		<li class="col02">设备正面图</li>
+		<li class="col03">槽位</li>
+		<li class="col04">设备背面图</li>
+	</ul>
+    {% for devices_sku in devices_skus %}
+	<ul class="device_list_th clearfix">
+        <li class="col01">{{ devices_sku.slot }}</li>
+		<li class="col02"><img src="{{ devices_sku.image_front.url }}" ></li>
+		<li class="col03">{{ devices_sku.slot }}</li>
+		<li class="col04"><img src="{{ devices_sku.image_behind.url }}" ></li>
+    </ul>
+    {% endfor %}
+</body>
+</html>

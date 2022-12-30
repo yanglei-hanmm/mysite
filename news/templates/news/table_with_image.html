@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .table{
+                display: table;
+                border-collapse: collapse;
+                width: 400px;
+                height: 200px;
+            }
+            .tr{
+                display: table-row;
+                height: 100px;
+            }
+            .td{
+                display: table-cell;
+                width: 100px;
+                text-align: center;
+                vertical-align: middle;
+                border: solid 1px red;
+                table-layout: fixed;
+            }
+            .table .td img{
+                width: 100px;
+                height: 100px;
+                display:block;
+            }
+    </style>
+</head>
+<body>
+
+<div class='table'>
+            <div class='tr'>
+                <div class='td'><img src="{% static 'news/images/zm2.png' %}" alt="" /></div>
+                <div class='td'><img src="{% static 'news/images/zm2.png' %}" alt="" /></div>
+                <div class='td'></div>
+                <div class='td'></div>
+            </div>
+            <div class='tr'>
+
+                <div class='td'><img src="{% static 'news/images/zm2.png' %}" alt="" /></div>
+                <div class='td'></div>
+                <div class='td'></div>
+                <div class='td'></div>
+            </div>
+        </div>
+</body>
+</html>
