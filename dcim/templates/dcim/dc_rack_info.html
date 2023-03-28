@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dcim/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dcim/css/reset.css' %}">
+</head>
+<body>
+    <div class="total_count">全部商品<em>{{ total_count }}</em>件</div>
+	<ul class="device_list_th clearfix">
+		<li class="col01">槽位</li>
+		<li class="col02">设备正面图</li>
+		<li class="col03">槽位</li>
+		<li class="col04">设备背面图</li>
+	</ul>
+    <ul class="device_list_th clearfix">
+
+            {% for device in devices %}
+                <li class="col01">
+                <ul class="slot_list_th clearfix">
+                {% for d in device.slot %}
+                   <li class="col01_01">{{ d }}</li>
+                {% endfor %}
+                </ul>
+                </li>
+               <li class="col02"><img src="{{ device.info.image_front.url }}" ></li>
+
+                <li class="col03">
+                <ul class="slot_list_th clearfix">
+                {% for d in device.slot %}
+                   <li class="col01_01">{{ d }}</li>
+                {% endfor %}
+                </ul>
+                </li>
+
+                <li class="col04"><img src="{{ device.info.image_behind.url }}" ></li>
+
+            {% endfor %}
+{#        {% for dc_rack_info in dc_rack_infos %}#}
+{##}
+{#            <div class="slot">{{ dc_rack_info.name }}</div>#}
+{##}
+{#        {% endfor %}#}
+        </ul>
+        <div class="device_list_image">
+{#    {% for devices_sku in devices_skus %}#}
+{##}
+{#        <div class="picture"><img src="{{ devices_sku.image_front.url }}" ></div>#}
+{##}
+{#    {% endfor %}#}
+    </div>
+</body>
+</html>

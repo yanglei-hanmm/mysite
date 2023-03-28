@@ -185,3 +185,12 @@ html,body{height:100%}
 .device_list_th .col04{width:35%;}
 .device_list_th .col02 img{width:320px;height: 60px}
 .device_list_th .col04 img{width:320px;height: 60px}
+
+.slot_list_th {width:100%;border: 1px solid #ddd;background-color:#f7f7f7;margin:0 auto;}
+.slot_list_th .col01_01{width:62px;height:30px;text-align: center;}
+/*.device_list_body {width:1198px;margin:0 auto;}*/
+/*.device_list_body .dc_rack_list {float: left;width:6%;}*/
+/*.device_list_body .dc_rack_list .slot{auto:6%;height: 21px;border: 1px gray;border-style: none solid solid solid ;}*/
+/*.device_list_body .device_list_image {float:left;width:35%;overflow: hidden}*/
+/*.device_list_body .device_list_image .picture {width:220px;height: 42px;border: 1px gray;border-style: none solid solid none ;}*/
+/*.device_list_body .device_list_image .picture img {width:100%;height: auto;}*/

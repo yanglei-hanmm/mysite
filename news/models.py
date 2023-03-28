@@ -15,3 +15,23 @@ class Article(models.Model):
 
     def __str__(self):
         return self.headline
+
+class SchoolClass(models.Model):
+    class_name = models.CharField(max_length=12)
+    class_master = models.CharField(max_length=12)
+
+    def __str__(self):
+        return '<SchoolClass: {0}>'.format(self.class_name)
+
+    __unicode__ = __str__
+
+class Student(models.Model):
+    school_class = models.ForeignKey(SchoolClass,on_delete=models.CASCADE)
+    name = models.CharField(max_length=12)
+
+class Author(models.Model):
+    author_name = models.CharField(max_length=24)
+
+class Book(models.Model):
+    book_name = models.CharField(max_length=48)
+    authors = models.ManyToManyField(Author)
